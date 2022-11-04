@@ -27,3 +27,9 @@ OpenshiftGUI
 
 
 http://cliwebapp-user1.apps.cluster-9jsdj.9jsdj.sandbox2238.opentlc.com/
+
+Docker.io
+	# Create Docker.io account https://hub.docker.com/
+	# sudo podman tag localhost/open-luna hornj/open-space-lunar-projekt-template-webapp:v1
+	# sudo podman login docker.io
+	# sudo podman push hornj/open-space-lunar-projekt-template-webapp:v1
