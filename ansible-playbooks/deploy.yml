@@ -1,0 +1,66 @@
+- hosts: localhost
+  tasks:
+    - name: deploy a web app
+      k8s:
+        api_version: v1
+        namespace: user1
+        definition:
+          kind: Deployment
+          metadata:
+            name: parksmap
+            labels:
+              app: parksmap
+          spec:
+            replicas: 1
+            selector:
+              matchLabels:
+                app: parksmap
+            template:
+              metadata:
+                labels:
+                  app: parksmap
+              spec:
+                containers:
+                  - name: parksmap
+                    image: docker.io/hornj/open-space-lunar-projekt-template-webapp:v1
+                    ports:
+                      - containerPort: 8080
+                        protocol: TCP
+
+    - name: create a web app service
+      k8s:
+        api_version: v1
+        namespace: user1
+        definition:
+          kind: Service
+          metadata:
+            name: parksmap
+            labels:
+              app: parksmap
+          spec:
+            ports:
+              - name: 8080-tcp
+                protocol: TCP
+                port: 8080
+                targetPort: 8080
+            selector:
+              app: parksmap
+  
+    - name: create a web app route
+      k8s:
+        api_version: v1
+        namespace: user1
+        definition:
+          kind: Route
+          metadata:
+            name: parksmap
+            labels:
+              app: parksmap
+          spec:
+            to:
+              kind: Service
+              name: parksmap
+              weight: 100
+            port:
+              targetPort: 8080-tcp
+            wildcardPolicy: None

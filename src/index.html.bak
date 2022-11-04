@@ -1,10 +1,23 @@
-<html> <center>
-<b> Red Hat - Hackathon <b>
-<h2> Day Two </h2>
-<h3>
-Challange 1 - Luna Project
-
-Horn & Scheininger
-</h3>
-</center> 
+<html> 
+<style>
+	body 
+	{
+		background: black;
+		font-size:14px;		
+	}
+	h1,h2,h3,b
+	{
+		color: red;
+		font-weight: red;	
+	}
+</style>
+	<center>
+		<h1> Red Hat - Hackathon <h1>
+		<h2> Day Two - 03.11.2022 </h2>
+		<h3>Challange 1 - Luna Project
+				<br>
+			Horn & Scheininger
+		</h3>
+		<img src="Red_Hat_logo.svg.png" alt="Red-Hat-Logo" width="100" height="100">
+	</center> 
 </html>
