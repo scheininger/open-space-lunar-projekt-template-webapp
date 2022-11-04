@@ -45,8 +45,5 @@ Ansible
 	sudo mv oc /usr/bin/
 	sudo chmod 777 /usr/bin/oc
 	
-	#login into your openshift cluster with your token
-	oc login --token=sha256~ktttKTcG0lEmtHcXMBnqPHnZRf8gpFeXpFZ4gz-7grc --server=https://api.cluster-9jsdj.9jsdj.sandbox2238.opentlc.com:6443
-	
 	#go into the ansible playbook directory and run the playbook
 	ansible-playbook deploy.yml 
